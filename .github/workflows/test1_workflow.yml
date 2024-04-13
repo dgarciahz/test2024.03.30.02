@@ -1,5 +1,5 @@
 # name es predefinido
-name: CI
+name: test1_workflow
 
 # trigger events
 on: workflow_dispatch:
