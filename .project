@@ -26,5 +26,10 @@
 			<type>1</type>
 			<location>C:/david/development/eclipse projects/testing/test2024.03.30.02/.github/workflows/test1_workflow.yml</location>
 		</link>
+		<link>
+			<name>test2WF.yml</name>
+			<type>1</type>
+			<location>C:/david/development/eclipse projects/testing/test2024.03.30.02/.github/workflows/test2WF.yml</location>
+		</link>
 	</linkedResources>
 </projectDescription>
