@@ -19,3 +19,4 @@ jobs:
         run:
           echo "second message"
           echo "second second message :-)"
+          echo "third second message from eclipse" 

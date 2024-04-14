@@ -20,4 +20,11 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.m2e.core.maven2Nature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>test1_workflow.yml</name>
+			<type>1</type>
+			<location>C:/david/development/eclipse projects/testing/test2024.03.30.02/.github/workflows/test1_workflow.yml</location>
+		</link>
+	</linkedResources>
 </projectDescription>
