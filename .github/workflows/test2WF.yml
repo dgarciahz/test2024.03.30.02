@@ -2,8 +2,7 @@
 name: test2_WF
 
 # trigger events
-on: 
-  workflow_dispatch:
+on: push
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # yaml indentation
@@ -18,3 +17,4 @@ jobs:
       - name: test2_job1_step2
         run:
           echo "test2_job1_step2"
+          
