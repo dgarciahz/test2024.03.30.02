@@ -8,13 +8,15 @@ jobs:
   # yaml indentation
   # This workflow contains a jobs con cualquier nombre. Se sabe que son jobs por la indentación
   job1:
-    # The type of runner that the job will run on
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-latest # The type of runner that the job will run on
+    
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: test2_job1_step1
-        run: echo "Hello, world test2 job1 step1!"
-      - name: test2_job1_step2
-        run:
-          echo "test2_job1_step2"
-          
+      - name: get code from repo
+        run: 
+          echo "Fetching code..."
+          echo $JAVA_HOME
+        uses: actions/checkout@v3 #esto es un comando predefinido en github; el @v3 es para fijar la version y no perderse luego con cambios
+      - name:
+    env:
+      JAVA_HOME: /usr/lib/jvm/java-1.8-openjdk/
