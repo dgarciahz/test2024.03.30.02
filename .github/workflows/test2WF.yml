@@ -16,7 +16,7 @@ jobs:
         run: 
           echo "Fetching code..."
           echo $JAVA_HOME
-        uses: actions/checkout@v3 #esto es un comando predefinido en github; el @v3 es para fijar la version y no perderse luego con cambios
+ #       uses: actions/checkout@v3 #esto es un comando predefinido en github; el @v3 es para fijar la version y no perderse luego con cambios
       - name:
     env:
       JAVA_HOME: /usr/lib/jvm/java-1.8-openjdk/
