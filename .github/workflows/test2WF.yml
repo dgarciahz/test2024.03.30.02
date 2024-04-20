@@ -13,11 +13,11 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       - name: get code from repo
-        run: 
-          echo "Fetching code..."
-          echo $JAVA_HOME
-          echo java -version
- #       uses: actions/checkout@v3 #esto es un comando predefinido en github; el @v3 es para fijar la version y no perderse luego con cambios
- #     - name:
+          uses actions/checkout@v3 
+#        run: 
+#          echo "Fetching code..."
+#          echo $JAVA_HOME
+#          echo java -version
+          #esto es un comando predefinido en github; el @v3 es para fijar la version y no perderse luego con cambios
     env:
       JAVA_HOME: /usr/lib/jvm/java-1.8-openjdk/
