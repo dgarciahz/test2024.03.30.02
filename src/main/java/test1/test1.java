@@ -6,6 +6,7 @@ import java.io.FileInputStream;
 import java.io.OutputStream;
 import java.io.InputStream;
 import java.util.Properties;
+import java.util.Random;
 import java.io.File;
 
 public class test1 {
@@ -32,7 +33,13 @@ public class test1 {
         prop.setProperty("db.url", "localhost");
         prop.setProperty("db.user", "mkyong");
         prop.setProperty("db.password", "password");
-        prop.setProperty("currentTimeMillis",new Long(System.currentTimeMillis()).toString());
+
+        Random random = new Random();
+        int randomInt = random.nextInt(100000);
+        double randomDouble = random.nextDouble();
+        String randomValueString=String.valueOf(randomDouble);
+        
+        prop.setProperty("currentTimeMillis",randomValueString);
 
         // save properties to project root folder
         prop.store(outputStream, "comment");
