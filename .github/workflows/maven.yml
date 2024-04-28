@@ -36,6 +36,7 @@ jobs:
        
     - name: Maven Install
       run: mvn package install
+      
 #      run: mvn -B package --file pom.xml
 
 #    - name: Submit Dependency Snapshot
