@@ -2,7 +2,9 @@ package test1;
 
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
+import java.io.FileInputStream;
 import java.io.OutputStream;
+import java.io.InputStream;
 import java.util.Properties;
 import java.io.File;
 
@@ -17,7 +19,7 @@ public class test1 {
 	}
 
 	private static final String _subdir="src/test/resources/";
-	public Properties readPropFile() throws Exception {
+	public Properties read_write_PropFile() throws Exception {
 		
         System.out.println("Crearemos un nuevo archivo de configuraciones");
 		File archivo = new File(_subdir+"localproperties.properties");       
@@ -39,5 +41,18 @@ public class test1 {
         System.out.println(prop);	
         
         return prop;
+	}
+
+	public String readed_db_user=null;
+	public String readed_currentTimeMillis=null;
+	
+	public void readPropFile() throws Exception {
+        System.out.println("Leyendo un nuevo archivo de configuraciones");
+		File archivo = new File(_subdir+"localproperties.properties");       
+        InputStream outputStream = new FileInputStream(archivo);
+        Properties prop = new Properties();
+        prop.load(outputStream);
+        readed_db_user=prop.getProperty("db.user");
+        readed_currentTimeMillis=prop.getProperty("currentTimeMillis");
 	}
 }
