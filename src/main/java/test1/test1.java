@@ -30,6 +30,7 @@ public class test1 {
         prop.setProperty("db.url", "localhost");
         prop.setProperty("db.user", "mkyong");
         prop.setProperty("db.password", "password");
+        prop.setProperty("currentTimeMillis",new Long(System.currentTimeMillis()).toString());
 
         // save properties to project root folder
         prop.store(outputStream, "comment");
