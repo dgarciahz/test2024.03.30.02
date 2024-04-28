@@ -26,7 +26,7 @@ public class test1 {
 		File archivo = new File(_subdir+"localproperties.properties");       
         OutputStream outputStream = new FileOutputStream(archivo);
         Properties prop = new Properties();
-        System.out.println("Creados...");
+        System.out.println("Creados..");
 
         
         // set the properties value
