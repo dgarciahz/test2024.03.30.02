@@ -32,11 +32,18 @@ jobs:
       run: mvn clean compile
        
     - name: Maven Test
-      run: mvn test
+      # metemos el resultado de los test en test-results.txt
+      run: mvn test | tee test-results.txt
+
+      #generamos el output
+    - name: Save test results
+      if: always()
+      run: echo "::set-output name=test-results::test-results.txt"
        
     - name: Maven Install
       run: mvn package install
       
+      #aqui generamos un artifact
     - name: Uploading artifacts
       uses: actions/upload-artifact@v4
       with:
@@ -45,8 +52,6 @@ jobs:
         # donde encontrar el fichero o multiples ficheros que iran al dist-files
         path: target/test1-0.0.1-SNAPSHOT.jar
       
-#      run: mvn -B package --file pom.xml
-
 #    - name: Submit Dependency Snapshot
 #      uses: advanced-security/maven-dependency-submission-action@v4
       
