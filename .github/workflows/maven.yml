@@ -29,17 +29,13 @@ jobs:
         cache: maven
         
     - name: Maven Compile
-      run:
-        echo "cleaning" 
-        mvn clean compile
+      run: mvn clean compile
        
     - name: Maven Test
-      run:
-        echo "testing" 
-        mvn test
+      run: mvn test
       
     - name: Uploading artifacts
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v4
       with:
         # nombre del artefact que será uploaded
         name: distrib_artifact
