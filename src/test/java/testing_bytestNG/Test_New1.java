@@ -13,6 +13,7 @@ public class Test_New1 {
 	  assert(new test().getMessage().equals(test._message));
   }
   
+  @Test
   public void f2() throws Exception {
 	  test1 t=new test1();
 	  Properties p1=t.readPropFile();
