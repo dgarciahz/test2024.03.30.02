@@ -17,7 +17,7 @@ public class test1 {
 	}
 
 	private static final String _subdir="src/test/resources/";
-	public void readPropFile() throws Exception {
+	public Properties readPropFile() throws Exception {
 		
         System.out.println("Crearemos un nuevo archivo de configuraciones");
 		File archivo = new File(_subdir+"localproperties.properties");       
@@ -37,5 +37,7 @@ public class test1 {
     
         System.out.println(archivo.getAbsolutePath());	
         System.out.println(prop);	
+        
+        return prop;
 	}
 }
