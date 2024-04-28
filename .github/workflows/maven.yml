@@ -16,8 +16,9 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
+    outputs: 
+      mvn-test-file: ${{ steps.test_results.outputs.test-results}}
 
     steps:
     - uses: actions/checkout@v4
@@ -37,6 +38,7 @@ jobs:
 
       #generamos el output
     - name: Save test results
+      id: test_results
       if: always()
       run: echo "{test-results}={test-results.txt}" >> $GITHUB_OUTPUT
 #      run: echo "::set-output name=test-results::test-results.txt"
