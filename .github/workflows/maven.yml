@@ -33,12 +33,13 @@ jobs:
        
     - name: Maven Test
       # metemos el resultado de los test en test-results.txt
-      run: mvn test | tee test-results.txt
+      run: mvn test | tee mvn-test-results.txt
 
       #generamos el output
     - name: Save test results
       if: always()
-      run: echo "::set-output name=test-results::test-results.txt"
+      run: echo "{test-results}={test-results.txt}" >> $GITHUB_OUTPUT
+#      run: echo "::set-output name=test-results::test-results.txt"
        
     - name: Maven Install
       run: mvn package install
