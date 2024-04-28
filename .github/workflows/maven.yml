@@ -33,6 +33,14 @@ jobs:
        
     - name: Maven Test
       run: mvn test
+      
+    - name: Uploading artifacts
+      uses: actions/upload-artifact@v3
+      with:
+        # nombre del artefact que será uploaded
+        name: distrib_artifact
+        # donde encontrar el fichero o multiples ficheros que iran al dist-files
+        path: target/test1-0.0.1-SNAPSHOT.jar
        
     - name: Maven Install
       run: mvn package install
