@@ -33,7 +33,9 @@ jobs:
       run: mvn clean compile
        
     - name: Maven Test
-      run: mvn test 
+      run: |
+        mvn test > mvn_output.txt
+        cat mvn_output.txt
     
     - name: creating artificial file
       run: |
