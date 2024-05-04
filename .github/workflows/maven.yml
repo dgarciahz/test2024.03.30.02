@@ -35,8 +35,9 @@ jobs:
     - name: Maven Test
       run: |
         mvn test > mvn_output.txt
-        cat mvn_output.txt
-        echo "DATA_MVN=$(cat mvn_output.txt)" >> $GITHUB_ENV
+        md5sum mvn_output.txt > mvn_hash.txt
+        cat mvn_hash.txt
+        echo "DATA_MVN=$(cat mvn_hash.txt)" >> $GITHUB_ENV
     
     - name: creating artificial file
       run: |
