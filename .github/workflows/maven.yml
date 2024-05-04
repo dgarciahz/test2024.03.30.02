@@ -46,7 +46,9 @@ jobs:
         echo "DATA=$(cat output.txt)" >> $GITHUB_ENV
 
     - name: Using test results
-      run: echo "Data from previous step $DATA"
+      run: |
+        echo "Data from previous step $DATA"
+        echo "Data from mvn test step $DATA_MVN"
        
     - name: Maven Install
       run: mvn package install
