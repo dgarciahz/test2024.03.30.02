@@ -50,6 +50,13 @@ jobs:
         echo "Data from previous step $DATA"
         echo "Data from mvn test step $DATA_MVN"
        
+    - name: artificial1
+      id: art1
+      run: echo "::set-output name=data3::$(cat mvn_hash.txt)"
+      
+    - name: artificial2
+      run: echo "artificial1 data is ${{ steps.art1.outputs.data3}}"
+      
     - name: Maven Install
       run: mvn package install
       
