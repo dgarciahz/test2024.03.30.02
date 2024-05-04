@@ -63,7 +63,7 @@ jobs:
         path: target/test1-0.0.1-SNAPSHOT.jar
         
   use_data_in_other_job:
-    needs: build
+    #needs: build
     runs-on: ubuntu-latest
     steps:
     - name: random step
