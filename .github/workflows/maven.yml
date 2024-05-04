@@ -35,7 +35,8 @@ jobs:
     - name: Maven Test
       # metemos el resultado de los test en test-results.txt
       run: |
-        mvn test | tee mvn-test-results.txt
+        # mvn test | tee mvn-test-results.txt
+        mvn test > mvn-test-results.txt
         # aqui lo convertimos en un output
         echo "DATA=$(cat mvn-test-results.txt)" >> $GITHUB_ENV
 
