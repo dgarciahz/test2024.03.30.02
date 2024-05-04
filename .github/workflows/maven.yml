@@ -35,11 +35,11 @@ jobs:
     - name: Maven Test
       run: mvn test 
     
-      - name: creating artificial file
-        run: |
-          echo "esto es un texto cualquiera 2024.05.04 12.08" > output.txt
-          cat output.txt
-          echo "DATA=$(output.txt)" >> $GITHUB_ENV
+    - name: creating artificial file
+      run: |
+        echo "esto es un texto cualquiera 2024.05.04 12.08" > output.txt
+        cat output.txt
+        echo "DATA=$(output.txt)" >> $GITHUB_ENV
 
     - name: Using test results
       run: echo "Data from previous step $DATA"
