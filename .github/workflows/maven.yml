@@ -41,7 +41,7 @@ jobs:
       run: |
         echo "esto es un texto cualquiera" > mvn-test-results.txt
         cat mvn-test-results.txt
-        echo "DATA=$(cat mvn-test-results.txt)" >> $GITHUB_OUTPUT
+        echo "DATA=$(cat mvn-test-results.txt)" >> $GITHUB_ENV
         # mvn test > mvn-test-results.txt
         # aqui lo convertimos en un output
         # echo "DATA=$(cat mvn-test-results.txt)" >> $GITHUB_OUTPUTT
