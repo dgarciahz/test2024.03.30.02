@@ -36,6 +36,7 @@ jobs:
       run: |
         mvn test > mvn_output.txt
         cat mvn_output.txt
+        echo "DATA_MVN=$(cat mvn_output.txt)" >> $GITHUB_ENV
     
     - name: creating artificial file
       run: |
