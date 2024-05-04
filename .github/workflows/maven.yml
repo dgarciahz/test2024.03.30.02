@@ -33,26 +33,16 @@ jobs:
       run: mvn clean compile
        
     - name: Maven Test
-      # metemos el resultado de los test en test-results.txt
-      # mvn test | tee mvn-test-results.txt
-      # run: mvn test 
+      run: mvn test 
     
-      #- name: creating artificial file
-      run: |
-        mvn test > mvn-test-results.txt
-        # echo "esto es un texto cualquiera" > mvn-test-results.txt
-        cat mvn-test-results.txt
-        echo "DATA=$(cat mvn-test-results.txt)" >> $GITHUB_ENV
-        # aqui lo convertimos en un output
-        # echo "DATA=$(cat mvn-test-results.txt)" >> $GITHUB_OUTPUTT
+      - name: creating artificial file
+        run: |
+          echo "esto es un texto cualquiera 2024.05.04 12.08" > output.txt
+          cat output.txt
+          echo "DATA=$(output.txt)" >> $GITHUB_ENV
 
     - name: Using test results
-      #accedemos el output ... esto es un paso artificial 
       run: echo "Data from previous step $DATA"
-#      id: test_results
-#      if: always()
-#      run: echo "{test-results}={test-results.txt}" >> $GITHUB_OUTPUT
-#      run: echo "::set-output name=test-results::test-results.txt"
        
     - name: Maven Install
       run: mvn package install
