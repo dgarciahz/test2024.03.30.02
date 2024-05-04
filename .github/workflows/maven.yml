@@ -36,13 +36,8 @@ jobs:
       run: |
         mvn test > mvn_output.txt
         md5sum mvn_output.txt > mvn_hash.txt
-        cat mvn_hash.txt
+        # cat mvn_hash.txt
         echo "DATA_MVN=$(cat mvn_hash.txt)" >> $GITHUB_ENV
-        mvn test | tee mvn-test-results.txt
-        # Escapar "::", "[" y "]"
-        cat mvn_output.txt | sed 's/::/\\::/g; s/\[/\\[/g; s/\]/\\]/g' > escaped-results.txt
-        echo "DATA_MVN2=$(cat escaped-results.txt)" >> $GITHUB_ENV
-        
     
     - name: creating artificial file
       run: |
