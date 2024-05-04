@@ -17,6 +17,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    outputs:
+      external_var: ${{ steps.mvn_test.outputs.DATA_MVN }}
 
     steps:
     - name: Checkout source code
@@ -33,6 +35,7 @@ jobs:
       run: mvn clean compile
        
     - name: Maven Test
+      id: mvn_test
       run: |
         mvn test > mvn_output.txt
         md5sum mvn_output.txt > mvn_hash.txt
@@ -70,4 +73,4 @@ jobs:
       run: echo "random step executing"
       
     - name: Using test results second job
-      run: echo "Data from previous job + step $DATA"
+      run: echo "Data from previous job + step ${{needs.build.outputs.external_var}}"
