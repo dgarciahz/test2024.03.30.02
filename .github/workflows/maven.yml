@@ -10,7 +10,7 @@ name: Java CI with Maven
 
 on:
   push:
-    branches: [ "dev" ]
+    branches: [ "main" ]
   workflow_dispatch:
     branches: [ "main" ]
 
@@ -31,6 +31,14 @@ jobs:
         distribution: 'temurin'
         cache: maven
         
+    - name: caching dependencies
+      uses: actions/cache@v4
+      with:
+        # que cachee lo que está en este path
+        path: ./target
+        # en funcion que no cambie la hash de debajo
+        # el ** hace que busque test1-0.0.1-SNAPSHOT.jar en todo el árbol
+        key: classes-compiled-${{ hashFiles('**/test1-0.0.1-SNAPSHOT.jar') }}
     - name: Maven Compile
       run: mvn clean compile
        
