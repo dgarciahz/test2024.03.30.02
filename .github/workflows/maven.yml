@@ -35,10 +35,16 @@ jobs:
     - name: Maven Test
       # metemos el resultado de los test en test-results.txt
       # mvn test | tee mvn-test-results.txt
+      run: mvn test 
+    
+    - name: creating artificial file
       run: |
-        mvn test > mvn-test-results.txt
-        # aqui lo convertimos en un output
+        echo "esto es un texto cualquiera" > mvn-test-results.txt
         echo "DATA=$(cat mvn-test-results.txt)" >> $GITHUB_OUTPUT
+      
+#     mvn test > mvn-test-results.txt
+#     aqui lo convertimos en un output
+#     echo "DATA=$(cat mvn-test-results.txt)" >> $GITHUB_OUTPUTT
 
       #accedemos el output ... esto es un paso artificial 
     - name: Using test results
