@@ -38,6 +38,11 @@ jobs:
         md5sum mvn_output.txt > mvn_hash.txt
         cat mvn_hash.txt
         echo "DATA_MVN=$(cat mvn_hash.txt)" >> $GITHUB_ENV
+        mvn test | tee mvn-test-results.txt
+        # Escapar "::", "[" y "]"
+        cat mvn_output.txt | sed 's/::/\\::/g; s/\[/\\[/g; s/\]/\\]/g' > escaped-results.txt
+        echo "DATA_MVN2=$(cat escaped-results.txt)" >> $GITHUB_ENV
+        
     
     - name: creating artificial file
       run: |
@@ -49,13 +54,7 @@ jobs:
       run: |
         echo "Data from previous step $DATA"
         echo "Data from mvn test step $DATA_MVN"
-       
-    - name: artificial1
-      id: art1
-      run: echo "::set-output name=data3::$(cat mvn_hash.txt)"
-      
-    - name: artificial2
-      run: echo "artificial1 data is ${{ steps.art1.outputs.data3}}"
+        echo "Data from mvn test step $DATA_MVN2"
       
     - name: Maven Install
       run: mvn package install
