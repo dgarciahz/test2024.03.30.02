@@ -40,7 +40,7 @@ jobs:
         mvn test > mvn_output.txt
         md5sum mvn_output.txt > mvn_hash.txt
         # cat mvn_hash.txt
-        echo "DATA_MVN=$(cat mvn_hash.txt)" >> $GITHUB_ENV
+        echo "DATA_MVN=$(cat mvn_hash.txt)" >> $GITHUB_OUTPUT
     
     - name: creating artificial file
       run: |
