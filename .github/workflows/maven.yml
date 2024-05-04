@@ -63,9 +63,9 @@ jobs:
         # donde encontrar el fichero o multiples ficheros que iran al dist-files
         path: target/test1-0.0.1-SNAPSHOT.jar
         
-#  use_data_in_other_job:
-#    runs-on: ubuntu-latest
-#    needs: build
-#    steps:
-#    - name: Using test results second job
-#      run: echo "Data from previous job + step $DATA"
+  use_data_in_other_job:
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+    - name: Using test results second job
+      run: echo "Data from previous job + step $DATA"
