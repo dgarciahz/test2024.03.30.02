@@ -66,5 +66,8 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     steps:
-      - name: Using test results second job
-        run: echo "Data from previous job + step $DATA"
+    - name: random step
+      run: echo "random step executing"
+      
+    - name: Using test results second job
+      run: echo "Data from previous job + step $DATA"
