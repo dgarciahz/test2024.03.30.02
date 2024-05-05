@@ -16,6 +16,8 @@ public class Test_New1 {
   @Test
   public void f2() throws Exception {
 	  
+	  assert(false);
+	  
 	  test1 t=new test1();
 	  t.readPropFile();
 	  System.out.println();	  

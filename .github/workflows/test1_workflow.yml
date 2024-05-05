@@ -23,9 +23,9 @@ jobs:
         run: echo "Hello, world!"
       - name: Run a multi-line script
         run: |
-          echo "second message"
-          echo "second second message :-)"
-          echo "third second message from eclipse" 
+          echo "variables message"
           echo $VARIABLE1
           echo $VARIABLE2
           echo $VARIABLE3
+          echo "end of variables"
+          
