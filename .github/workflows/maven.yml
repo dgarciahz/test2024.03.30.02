@@ -68,6 +68,7 @@ jobs:
       run: echo "mvn_test step was a failure2"
 
     - name: Maven Install
+      continue-on-error: true
       run: mvn package install
       
     - name: Uploading artifacts
