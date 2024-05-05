@@ -51,16 +51,22 @@ jobs:
         echo "DATA_MVN=$(cat mvn_hash.txt)" >> $GITHUB_OUTPUT
     
     - name: creating artificial file
+      if: steps.mvn_test.outcome == 'success'
       run: |
         echo "esto es un texto cualquiera 2024.05.04 12.08" > output.txt
         cat output.txt
         echo "DATA=$(cat output.txt)" >> $GITHUB_ENV
 
     - name: Using test results
+      if: steps.mvn_test.outcome == 'success'
       run: |
         echo "Data from previous step $DATA"
         echo "Data from mvn test step $DATA_MVN"
-      
+
+    - name: conditional_step
+      if: steps.mvn_test.outcome == 'failure'
+      run: echo "mvn_test step was a failure"
+        
     - name: Maven Install
       run: mvn package install
       
