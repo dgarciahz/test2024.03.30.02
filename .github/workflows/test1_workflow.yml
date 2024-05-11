@@ -14,7 +14,10 @@ jobs:
     strategy:
       matrix:
         m_variable_name1: [1, 2]
-        m_variable_name2: [matrix1, matrix2]        
+        m_variable_name2: [matrix1, matrix2]
+        include:
+          - m_variable_name1: 5
+          - m_variable_name2: matrix3
     environment: production
     env:
       VARIABLE2: value-in-the-job1
