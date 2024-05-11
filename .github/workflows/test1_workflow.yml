@@ -18,6 +18,9 @@ jobs:
         include:
           - m_variable_name1: 5
             m_variable_name2: matrix3
+        exclude:
+          - m_variable_name1: 1
+            m_variable_name2: matrix1
     environment: production
     env:
       VARIABLE2: value-in-the-job1
