@@ -1,6 +1,7 @@
 name: testing github WF 2
 
-on: workflow_call
+on: 
+  workflow_call:
   #workflow_dispatch:
   #  branches: 
   #    - main
