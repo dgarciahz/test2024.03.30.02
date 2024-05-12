@@ -2,9 +2,11 @@ name: testing github WF 2
 
 on:
   workflow_dispatch:
-    branches: [ "main" ]
+    branches: 
+      - main
   workflow_call:
-    branches: [ "main" ]
+    branches: 
+      - main
 
 jobs:
   job1:
