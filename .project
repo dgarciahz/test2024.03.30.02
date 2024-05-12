@@ -22,14 +22,24 @@
 	</natures>
 	<linkedResources>
 		<link>
-			<name>maven.yml</name>
+			<name>yamls/maven.yml</name>
 			<type>1</type>
-			<location>C:/david/development/eclipse projects/testing/test2024.03.30.02/.github/workflows/maven.yml</location>
+			<locationURI>PROJECT_LOC/.github/workflows/maven.yml</locationURI>
 		</link>
 		<link>
-			<name>test1_workflow.yml</name>
+			<name>yamls/test1_workflow.yml</name>
 			<type>1</type>
-			<location>C:/david/development/eclipse projects/testing/test2024.03.30.02/.github/workflows/test1_workflow.yml</location>
+			<locationURI>PROJECT_LOC/.github/workflows/test1_workflow.yml</locationURI>
+		</link>
+		<link>
+			<name>yamls/wf1.yml</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/.github/workflows/wf1.yml</locationURI>
+		</link>
+		<link>
+			<name>yamls/wf2_reuse_able.yml</name>
+			<type>1</type>
+			<locationURI>PROJECT_LOC/.github/workflows/wf2_reuse_able.yml</locationURI>
 		</link>
 	</linkedResources>
 </projectDescription>
