@@ -5,8 +5,7 @@ on:
     branches: 
       - main
   workflow_call:
-    branches: 
-      - main
+  # no se especifican ramas en un reusable WF
 
 jobs:
   job1:
