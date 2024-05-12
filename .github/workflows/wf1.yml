@@ -15,9 +15,8 @@ jobs:
         # echo "Data from previous step $DATA"
         # echo "Data from mvn test step $DATA_MVN"
     
-    - name: step2 reusing WF2
-      # hacemos un uses referenciando el WF re_usado con la ruta en el dir de WFs
-      uses: ./.github/workflows/wf2_reuse_able.yml
+    # - name: step2 reusing WF2
+    - uses: ./.github/workflows/wf2_reuse_able.yml
     
     - name: step3
       run: echo "Completed"
