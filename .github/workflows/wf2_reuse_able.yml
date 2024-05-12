@@ -2,9 +2,9 @@ name: testing github WF 2
 
 on: 
   workflow_call:
-  #workflow_dispatch:
-  #  branches: 
-  #    - main
+  workflow_dispatch:
+    branches: 
+      - main
 
   # no se especifican ramas en un reusable WF
 
